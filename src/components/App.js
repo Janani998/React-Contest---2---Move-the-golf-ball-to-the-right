@@ -30,15 +30,15 @@ class App extends Component {
   componentDidMount() {
     document.addEventListener("keydown", (event) => {
       if (event.keyCode === 39) {
-        this.setState({
-          ballPosition: {
-            left: `${
-              Number(this.state.ballPosition.left.match(/\d+/)[0]) + 5
-            }px`
-          }
-        });
-      }
-    });
+        this.setState({ posi : this.state.posi +5 }, () => 
+          this.setState({ballPosition: {
+          left: `${
+            this.state.posi 
+            // Number(this.state.ballPosition.left.match(/\d+/)[0]) + 5
+          }px`
+        } })
+    );
+   };
   }
 
   render() {
